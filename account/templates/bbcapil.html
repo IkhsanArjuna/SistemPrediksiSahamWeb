@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="light scroll-smooth" dir="ltr">
+    
+<!-- Mirrored from shreethemes.in/hously/dashboard/explore-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 03:02:28 GMT -->
+<head>
+        <meta charset="UTF-8">
+        <title>Sistem Prediksi Harga Saham</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Tailwind CSS Saas & Software Landing Page Template">
+        <meta name="keywords" content="agency, application, business, clean, creative, cryptocurrency, it solutions, modern, multipurpose, nft marketplace, portfolio, saas, software, tailwind css">
+        <meta name="author" content="Shreethemes">
+        <meta name="website" content="https://shreethemes.in/">
+        <meta name="email" content="support@shreethemes.in">
+        <meta name="version" content="2.5.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href={% static "assets/images/favicon.ico" %}>
+
+        <!-- Css -->
+        <!-- Main Css -->
+        <link href={% static "assets/libs/simplebar/simplebar.min.css" %} rel="stylesheet">
+        <link href={% static "assets/libs/%40mdi/font/css/materialdesignicons.min.css" %} rel="stylesheet" type="text/css">
+         <link rel="stylesheet" href={% static "assets/css/tailwind.min.css" %}>
+    </head>
+    
+    <body class="font-league text-base text-black dark:text-white dark:bg-slate-900">
+        <!-- Loader Start -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader End -->
+
+
+        <div class="page-wrapper toggled">
+            <!-- sidebar-wrapper -->
+             <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
+                <div class="sidebar-content">
+                    <div class="sidebar-brand">
+                        <a href="/dashboard"> <h5 class="text-l font-semibold">Prediksi Harga Saham</h5></a>
+                    </div>
+        
+                    <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
+                        <li>
+                            <a href="/dashboard"><i class="mdi mdi-chart-bell-curve-cumulative me-2"></i>Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="/saham"><i class="mdi mdi-home-city me-2"></i>Daftar Saham</a>
+                        </li>
+
+                        <li>
+                            <a href="/favorite"><i class="mdi mdi-home-heart me-2"></i>Saham Favorit</a>
+                        </li>
+
+                       {% if request.user.is_superuser %}
+                        <li>
+                            <a href="/addberita"><i class="mdi mdi-home-plus me-2"></i>Add Berita</a>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <a href="/berita"><i class="mdi mdi-post-outline me-2"></i>Berita</a>
+                        </li>
+                        
+                    </ul>
+                    <!-- sidebar-menu  -->
+                </div>
+            </nav>
+            <!-- sidebar-wrapper  -->
+
+            <!-- Start Page Content -->
+            <main class="page-content bg-gray-50 dark:bg-slate-800">
+                <!-- Top Header -->
+                <div class="top-header">
+                    <div class="header-bar flex justify-between">
+                        <div class="flex items-center space-x-1">
+                            <!-- Logo -->
+                            <a href="#" class="xl:hidden block me-2">
+                                <img src={% static "assets/images/logo-icon-32.png"%} class="md:hidden block" alt="">
+                                <span class="md:block hidden">
+                                    <img src={% static "assets/images/logo-dark.png"%} class="inline-block dark:hidden" alt="">
+                                    <img src={% static "assets/images/logo-light.png"%} class="hidden dark:inline-block" alt="">
+                                </span>
+                            </a>
+                            <!-- Logo -->
+
+                            <!-- show or close sidebar -->
+                            <a id="close-sidebar" class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md" href="javascript:void(0)">
+                                <i data-feather="menu" class="size-4"></i>
+                            </a>
+                            <!-- show or close sidebar -->
+            
+                            <!-- Searchbar -->
+                           
+                            <!-- Searchbar -->
+                        </div>
+
+                        <ul class="list-none mb-0 space-x-1">
+                            <!-- Country Dropdown -->
+                            
+                            <!-- Country Dropdown -->
+
+                            <!-- Notification Dropdown -->
+                           <!--end dropdown-->
+                            <!-- Notification Dropdown -->
+            
+                            <!-- User/Profile Dropdown -->
+                            <li class="dropdown inline-block relative">
+                                <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
+                                    <span class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md"><img src={% static "assets/images/client/07.jpg" %} class="rounded-md" alt=""></span>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
+                                    <ul class="py-2 text-start">
+                                        <li>
+                                            <a href="profile.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-account-outline me-2"></i>Profile</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="login.html" class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i class="mdi mdi-logout me-2"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li><!--end dropdown-->
+                            <!-- User/Profile Dropdown -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Top Header -->
+
+                <div class="container-fluid relative px-3">
+                    <div class="layout-specing">
+                        <!-- Start Content -->
+                        <div class="md:flex justify-between items-center">
+                            <h5 class="text-lg font-semibold">Daftar Saham</h5>
+
+                            <ul class="tracking-[0.5px] inline-block sm:mt-0 mt-3">
+                                <li class="inline-block capitalize text-[16px] font-medium duration-500 dark:text-white/70 hover:text-green-600 dark:hover:text-white">
+                            </ul>
+                        </div>
+
+                        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-6">
+                            <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
+                                <div class="relative">
+                                    <img src={% static "assets/images/property/bbca.jpg" %} alt="">
+        
+                                    <div class="absolute top-4 end-4">
+                                        <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>
+                                    </div>
+                                </div>
+        
+                                <div class="p-6">
+                                    <div class="pb-6">
+                                        <a href="/predict_stockbbca7" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">Prediksi Untuk 7 Hari</a>
+                                    </div>
+        
+                                   
+                                   
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!--end property content-->
+        
+                            <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
+                                <div class="relative">
+                                    <img src={% static "assets/images/property/bbca.jpg" %} alt="">
+        
+                                    <div class="absolute top-4 end-4">
+                                        <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>
+                                    </div>
+                                </div>
+        
+                                <div class="p-6">
+                                    <div class="pb-6">
+                                        <a href="/predict_stockbbca30" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">Prediksi Untuk 30 Hari</a>
+                                    </div>
+        
+                                
+                                    </ul>
+        
+                                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!--end property content-->
+        
+                          <!--end property content-->
+        
+                            <!--end property content-->
+        
+                            <!--end property content-->
+        
+                            <!--end property content-->
+        
+                           <!--end property content-->
+        
+                           <!--end property content-->
+        
+                           <!--end property content-->
+                        </div><!--en grid-->
+        
+                        <div class="grid md:grid-cols-12 grid-cols-1 mt-6">
+                            <div class="md:col-span-12 text-center">
+                                <nav>
+                                    <ul class="inline-flex items-center -space-x-px">
+                                        <li>
+                                            <a href="#" class="size-10 inline-flex justify-center items-center mx-1 rounded-full text-slate-400 bg-white dark:bg-slate-900 hover:text-white shadow-xs dark:shadow-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600">
+                                                <i class="mdi mdi-chevron-left text-[20px]"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="size-10 inline-flex justify-center items-center mx-1 rounded-full text-slate-400 hover:text-white bg-white dark:bg-slate-900 shadow-xs dark:shadow-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="size-10 inline-flex justify-center items-center mx-1 rounded-full text-slate-400 hover:text-white bg-white dark:bg-slate-900 shadow-xs dark:shadow-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-current="page" class="z-10 size-10 inline-flex justify-center items-center mx-1 rounded-full text-white bg-green-600 shadow-xs dark:shadow-gray-700">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="size-10 inline-flex justify-center items-center mx-1 rounded-full text-slate-400 hover:text-white bg-white dark:bg-slate-900 shadow-xs dark:shadow-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="size-10 inline-flex justify-center items-center mx-1 rounded-full text-slate-400 bg-white dark:bg-slate-900 hover:text-white shadow-xs dark:shadow-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600">
+                                                <i class="mdi mdi-chevron-right text-[20px]"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div><!--end grid-->
+                        <!-- End Content -->
+                    </div>
+                </div><!--end container-->
+
+                <!-- Footer Start -->
+              
+                       <!--end col-->
+                        </div><!--end grid-->
+                    </div><!--end container-->
+                </footer><!--end footer-->
+                <!-- End -->
+            </main>
+            <!--End page-content" -->
+        </div>
+        <!-- page-wrapper -->
+
+        <!-- Switcher -->
+        <div class="fixed top-[30%] -end-2 z-50">
+            <span class="relative inline-block rotate-90">
+                <input type="checkbox" class="checkbox opacity-0 absolute" id="chk" />
+                <label class="label bg-slate-900 dark:bg-white shadow-sm dark:shadow-gray-700 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8" for="chk">
+                    <i data-feather="moon" class="size-[18px] text-yellow-500"></i>
+                    <i data-feather="sun" class="size-[18px] text-yellow-500"></i>
+                    <span class="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] size-7"></span>
+                </label>
+            </span>
+        </div>
+        <!-- Switcher -->
+
+        <!-- LTR & RTL Mode Code -->
+        <div class="fixed top-[40%] -end-3 z-50">
+            <a href="#" id="switchRtl">
+                <span class="py-1 px-3 relative inline-block rounded-b-md -rotate-90 bg-white dark:bg-slate-900 shadow-md dark:shadow-sm dark:shadow-gray-700 font-bold rtl:block ltr:hidden" >LTR</span>
+                <span class="py-1 px-3 relative inline-block rounded-t-md -rotate-90 bg-white dark:bg-slate-900 shadow-md dark:shadow-sm dark:shadow-gray-700 font-bold ltr:block rtl:hidden">RTL</span>
+            </a>
+        </div>
+        <!-- LTR & RTL Mode Code -->
+
+        <!-- JAVASCRIPTS -->
+        <script src={% static "assets/libs/feather-icons/feather.min.js" %}></script>
+        <script src={% static "assets/libs/simplebar/simplebar.min.js" %}></script>
+        <script src={% static "assets/js/plugins.init.js" %}></script>
+        <script src={% static "assets/js/app.js" %}></script>
+        <!-- JAVASCRIPTS -->
+    </body>
+
+<!-- Mirrored from shreethemes.in/hously/dashboard/explore-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 03:02:39 GMT -->
+</html>

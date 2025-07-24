@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediksi Saham BBNI 7 Hari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .btn-download {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .chart {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediksi Harga Saham BBNI (LSTM - 7 Hari)</h1>
+
+    <div class="chart">
+        <h2>📈 Grafik Historis</h2>
+        {{ plot1|safe }}
+    </div>
+
+    <div class="chart">
+        <h2>🔮 Grafik Prediksi 7 Hari ke Depan</h2>
+        {{ plot2|safe }}
+    </div>
+
+    <h2>📊 Tabel Prediksi</h2>
+    {{ forecast|safe }}
+
+    <h2>📥 Unduh Hasil Prediksi</h2>
+    <form method="get" action="{% url 'download_forecast_csv' %}">
+        <button class="btn-download" type="submit">Download CSV</button>
+    </form>
+</body>
+</html>
