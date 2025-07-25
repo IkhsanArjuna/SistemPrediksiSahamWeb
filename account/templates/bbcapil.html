@@ -145,50 +145,109 @@
                             </ul>
                         </div>
 
-                        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-6">
-                            <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
-                                <div class="relative">
-                                    <img src={% static "assets/images/property/bbca.jpg" %} alt="">
-        
-                                    <div class="absolute top-4 end-4">
-                                        <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>
+                                        <style>
+                            /* Spinner loading */
+                            #loading-spinner {
+                                display: none;
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100vw;
+                                height: 100vh;
+                                background-color: rgba(255, 255, 255, 0.8);
+                                z-index: 9999;
+                            }
+
+                            .spinner {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 50px;
+                                height: 50px;
+                                border: 6px solid #ccc;
+                                border-top: 6px solid #4ade80;
+                                border-radius: 50%;
+                                animation: spin 1s linear infinite;
+                            }
+
+                            @keyframes spin {
+                                to {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        </style>
+                    </head>
+                    <body class="bg-gray-100">
+
+                        <!-- Spinner -->
+                        <div id="loading-spinner">
+                            <div class="spinner"></div>
+                        </div>
+
+
+                            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-6">
+
+                                <!-- Box Prediksi 7 Hari -->
+                                <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl 
+                                            dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 
+                                            overflow-hidden ease-in-out duration-500">
+                                    <div class="relative">
+                                        <img src="{% static 'assets/images/property/bbca.jpg' %}" alt="">
+                                        <div class="absolute top-4 end-4">
+                                            <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm 
+                                                    dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 
+                                                    focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 
+                                                    dark:hover:text-red-600">
+                                                <i class="mdi mdi-heart text-[20px]"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="p-6">
+                                        <div class="pb-6">
+                                            <a href="/predict_stockbbca7" onclick="showLoading()" 
+                                            class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">
+                                                Prediksi Untuk 7 Hari
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-        
-                                <div class="p-6">
-                                    <div class="pb-6">
-                                        <a href="/predict_stockbbca7" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">Prediksi Untuk 7 Hari</a>
+
+                                <!-- Box Prediksi 30 Hari -->
+                                <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl 
+                                            dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 
+                                            overflow-hidden ease-in-out duration-500">
+                                    <div class="relative">
+                                        <img src="{% static 'assets/images/property/bbca.jpg' %}" alt="">
+                                        <div class="absolute top-4 end-4">
+                                            <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm 
+                                                    dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 
+                                                    focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 
+                                                    dark:hover:text-red-600">
+                                                <i class="mdi mdi-heart text-[20px]"></i>
+                                            </a>
+                                        </div>
                                     </div>
-        
-                                   
-                                   
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div><!--end property content-->
-        
-                            <div class="group rounded-xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
-                                <div class="relative">
-                                    <img src={% static "assets/images/property/bbca.jpg" %} alt="">
-        
-                                    <div class="absolute top-4 end-4">
-                                        <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 !rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>
+                                    <div class="p-6">
+                                        <div class="pb-6">
+                                            <a href="/predict_stockbbca30" onclick="showLoading()" 
+                                            class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">
+                                                Prediksi Untuk 30 Hari
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-        
-                                <div class="p-6">
-                                    <div class="pb-6">
-                                        <a href="/predict_stockbbca30" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">Prediksi Untuk 30 Hari</a>
-                                    </div>
-        
-                                
-                                    </ul>
-        
-                                    
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div><!--end property content-->
+
+                            </div>
+                        </div>
+
+                        <!-- JavaScript Spinner -->
+                        <script>
+                            function showLoading() {
+                                document.getElementById('loading-spinner').style.display = 'block';
+                            }
+                        </script>
+
         
                           <!--end property content-->
         
