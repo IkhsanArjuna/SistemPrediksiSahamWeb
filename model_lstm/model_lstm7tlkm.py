@@ -3,8 +3,8 @@ import pandas as pd
 import yfinance as yf
 from sklearn.preprocessing import MinMaxScaler
 import plotly.graph_objs as go
-from keras.api.models import Sequential
-from keras.api.layers import Dense, LSTM
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM
 import os
 
 from django.conf import settings

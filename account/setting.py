@@ -8,3 +8,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Tambahkan LOGIN_URL di bawah sini:
 LOGIN_URL = '/login/'
+
+ALLOWED_HOSTS = ['<ELASTIC_IP>', 'localhost','*' ]

@@ -11,9 +11,8 @@ import numpy as np
 import yfinance as yf
 import tensorflow as tf
 from tensorflow import keras
-from keras.api.models import Sequential
-from keras.api.layers import Dense, LSTM
-from keras.api.models import load_model
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.layers import Dense, LSTM
 import joblib
 import plotly.graph_objs as go
 from plotly.offline import plot
