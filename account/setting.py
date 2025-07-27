@@ -52,7 +52,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'user_account.wsgi.application'
+
 
 # Database (ganti sesuai kebutuhan)
 DATABASES = {
