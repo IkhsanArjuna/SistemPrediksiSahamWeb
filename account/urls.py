@@ -1,8 +1,5 @@
-from django.urls import path 
+from django.urls import path
 from . import views
-import os
-from pathlib import Path
-from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -22,6 +19,8 @@ urlpatterns = [
     path("unvrpil/", views.unvrpil, name='umvrpil'),
     path("indfpil/", views.indfpil, name='indfpil'),
     path("tlkmpil/", views.tlkmpil, name='tlkmpil'),
+    
+    # Predict routes
     path('predict_stockbbni7', views.predict_stockbbni7, name='predict_stockbbni7'),
     path('predict_stockbbni30', views.predict_stockbbni30, name='predict_stockbbni30'),
     path('predict_stockbbri7', views.predict_stockbbri7, name='predict_stockbbri7'),
@@ -34,21 +33,10 @@ urlpatterns = [
     path('predict_stockindf30', views.predict_stockindf30, name='predict_stockindf30'),
     path('predict_stocktlkm7', views.predict_stocktlkm7, name='predict_stocktlkm7'),
     path('predict_stocktlkm30', views.predict_stocktlkm30, name='predict_stocktlkm30'),
+
     path('download_forecast_csv/', views.download_forecast_csv, name='download_forecast_csv'),
- 
 ]
 
-STATIC_URL = '/static/'
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Untuk development biasanya cukup ini
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'PrediksiSaham/account/static'),
-]
-
-# Untuk production (ngumpulin semua static file jadi satu folder)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+# Tambahkan media URL hanya saat DEBUG = True
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
